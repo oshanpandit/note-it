@@ -1,0 +1,24 @@
+<div class="notes-area">
+
+     <div class="form-input">
+        <input [(ngModel)]="curr_title" class="form-control form-control-lg" placeholder="Add a Title">
+        <input [(ngModel)]="curr_content" class="form-control form-control-lg" placeholder="Take a Note.."><br>
+        <button type="submit" class="btn btn-primary" (click)="addTask()">Add Task</button>
+     </div>
+
+    <div class="responses">
+
+        <div *ngIf="noteItems.length==0">
+            <h4>No Item To Show</h4>
+              </div>
+
+        <div  *ngFor="let note of noteItems;index as i" class="card" style="width: 14rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{note.title}}</h5>
+              <p class="card-text">{{note.content}}</p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+              </div>
+          </div>
+        </div>
+</div>

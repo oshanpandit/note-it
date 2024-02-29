@@ -1,4 +1,4 @@
-.notes-area{
+.archive-area{
     padding-top: 20px; 
     display: flex;
     flex-direction: column;
@@ -7,12 +7,6 @@
     width:100%;
     background-color: red;
 }
-.form-input{
-    width:50%;
-    border-radius: 20%;
-    margin-bottom:20px;
-}
-
 .responses{
     display:grid;
     grid-template-columns: 200px 200px 200px 200px;
@@ -24,6 +18,3 @@
 .card-body{
     border:2px solid black;
 }
-
-
-

@@ -1,0 +1,20 @@
+<div class="archive-area">
+    
+    <div class="heading">
+     <h4>Here are Your Archives</h4>
+    </div>
+
+       <div class="responses">
+
+             <h4 *ngIf="archivedItems.length==0">No Item To Show</h4>
+ 
+         <div  *ngFor="let archive of archivedItems;index as i" class="card">
+             <div class="card-body">
+               <h5 class="card-title">{{archive.title}}</h5>
+               <p class="card-text">{{archive.content}}</p>
+               <a class="card-link" (click)="removeTask(i)"><i class="fa-solid fa-trash" style="color:darkblue"></i></a>
+               </div>
+           </div>
+
+       </div>
+</div>

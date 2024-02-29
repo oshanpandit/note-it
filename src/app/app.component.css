@@ -30,13 +30,13 @@ app-side-nav{
 }
 .display-area{
     position:absolute;
-    left:120px;
+    left:60px;
     /* was 60 */
     width:calc(100% - 250px);
     transition: width 250ms ease-in-out,width 250ms ease-in;
 }
 .display-area-shrink{
     width:calc(100% - 250px);
-    left:260px;
-    /* was 250 */
+    left:250px;
+   
 }

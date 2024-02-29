@@ -15,7 +15,7 @@
     height:50px;
 }
 
-.nav-list-open .nav-list-item:hover{
+.nav-list-item:hover{
     
     background-color:lightgray;
     border-radius: 10px;

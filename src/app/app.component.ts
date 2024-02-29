@@ -7,5 +7,5 @@ import { Component,Input} from '@angular/core';
 })
 export class AppComponent {
   
-   sideNavStatus:boolean=true;
+   sideNavStatus:boolean=false;
 }

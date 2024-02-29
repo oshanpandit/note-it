@@ -1,5 +1,7 @@
 import { Component, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
+import { DataService } from '../data.service';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +10,11 @@ import { EventEmitter } from '@angular/core';
 })
 export class HeaderComponent {
 
+  constructor(private dataService:DataService){};
+
+  ngOnInit(){
+   
+  }
   @Output() sideNavToggled=new EventEmitter<boolean>();
   menuStatus:boolean=false;
   SideNavToggle(){

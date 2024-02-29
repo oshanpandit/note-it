@@ -13,7 +13,45 @@ nav{
   border-radius: 30%;
 }
 
+.search{
+    width:60%;
+}
+.icons{
+    width:20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    color:white;
+    font-size:22px;
+}
 
 .profile-logo{
+    width:45px;
+    height:45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color:white;
+    font-size: 20px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    background-color: blueviolet;
 }
+
+.logo:hover{
+    width:45px;
+    height:45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000;
+    background-color: #c4bfbe;
+}
+.profile-logo:hover{
+    background-color: lightslategray;
+}
+

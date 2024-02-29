@@ -1,25 +1,25 @@
 <div class="side-nav-content">
-    <ul class="nav-list" [ngClass]="{'nav-list-open':sideNavStatus}">
+    <ul class="nav-list">
 
-        <li class="nav-list-item">
+        <li routerLink="/" class="nav-list-item">
             <i class="fa-solid fa-lightbulb"></i>
                 <span>
-                    <a href="#">Notes</a>
+                    <a href="/">Notes</a>
                 </span>
            </li>
         
-        <li class="nav-list-item">
+        <li routerLink="archive" class="nav-list-item">
             <i class="fa-solid fa-folder"></i>
         <span>
-            <a href="#">Archive</a>
+            <a href="/archive">Archive</a>
         </span>
         
     </li>
 
-   <li class="nav-list-item">
+   <li routerLink="trash" class="nav-list-item">
     <i class="fa-solid fa-trash"></i>
         <span>
-            <a href="#">Trash</a>
+            <a href="/trash">Trash</a>
         </span>
    </li>
 

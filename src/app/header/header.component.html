@@ -6,13 +6,13 @@
 
      <a class="navbar-brand px-4" href="#"><h2>Keep</h2></a>
 
-     <form class="search d-flex me-5">
-         <input name="search" class="form-control me-2" type="search" placeholder="Search">
+     <form class="search d-flex me-5" (ngSubmit)="onSubmit(ref)" #ref="ngForm">
+         <input ngModel name="search" class="form-control me-2" type="search" placeholder="Search">
          <button class="btn btn-outline-light" type="submit">Search</button>
      </form>
 
      <div class="icons">
-        <div class="logo">
+        <div class="logo" routerLink="/">
             <i class="fa-solid fa-rotate-right"></i>
          </div>
          <div class="logo">

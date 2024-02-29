@@ -5,7 +5,7 @@ import { OnInit } from '@angular/core';
 @Component({
   selector: 'app-notes',
   templateUrl: './notes.component.html',
-  styleUrl: './notes.component.css' // Changed styleUrl to styleUrls
+  styleUrl: './notes.component.css' 
 })
 export class NotesComponent {
 
@@ -14,14 +14,18 @@ export class NotesComponent {
     curr_title="";
     curr_content="";
 
+    curr_search='';
+
     ngOnInit(){
       this.noteItems=this.dataService.noteitems;
+      this.dataService.sharedString$.subscribe(newString => {
+         this.curr_search = newString;
+       });
     }
 
     addTask(){
        if(this.curr_content!=''){
           this.dataService.addItem(this.curr_title,this.curr_content);
-          console.log(this.dataService.noteitems);
        }
     }
     removeTask(index:number){

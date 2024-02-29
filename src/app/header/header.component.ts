@@ -2,6 +2,7 @@ import { Component, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { DataService } from '../data.service';
 import { OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
@@ -21,6 +22,10 @@ export class HeaderComponent {
     this.menuStatus=!this.menuStatus;
     console.log("toggled");
     this.sideNavToggled.emit(this.menuStatus);
+  }
+
+    onSubmit(form:NgForm){
+      this.dataService.updateString(form.value.search);
   }
 
 

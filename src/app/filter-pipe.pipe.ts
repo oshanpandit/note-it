@@ -8,14 +8,14 @@ export class FilterPipePipe implements PipeTransform {
 
   transform(value:any,type:string){
 
-    if(type==''){
+    if(type=='' || type==' '){
       return value;
     }
 
     const resultArray=[];
 
      for(let item of value){
-         if(item.content==type){
+         if(item.content==type || item.title==type){
             resultArray.push(item);
          }
      }

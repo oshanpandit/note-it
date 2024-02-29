@@ -5,14 +5,15 @@
         <input [(ngModel)]="curr_content" class="form-control form-control-lg" placeholder="Take a Note.."><br>
         <button type="submit" class="btn btn-primary" (click)="addTask()">Add Task</button>
      </div>
-
+     
     <div class="responses">
 
         <div *ngIf="noteItems.length==0">
             <h4>No Item To Show</h4>
               </div>
 
-        <div  *ngFor="let note of noteItems;index as i" class="card">
+        <div  *ngFor="let note of noteItems | filterPipe:curr_search;index as i" class="card">
+
             <div class="card-body">
               <h5 class="card-title">{{note.title}}</h5>
               <p class="card-text">{{note.content}}</p>

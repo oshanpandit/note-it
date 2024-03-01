@@ -9,25 +9,54 @@
 }
 .form-input{
     width:50%;
-    border-radius: 20%;
+    border-radius:20%;
     margin-bottom:20px;
 }
 
-.responses{
+/* grid styles */
+
+/* .container{
     display:grid;
+    justify-content: center;
     grid-template-columns: 200px 200px 200px 200px;
     grid-auto-rows: minmax(100px,auto);
     grid-gap:20px;
     background-color: aqua;
     width:90%;
 }
-.card{
+
+.item{
     height:fit-content;
-
-}
-.card-body{
+    background-color: white;
+} 
+ .card-body{
     border:2px solid black;
-}
+} */
 
-
-
+/* kuch bhi styles */
+.container {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: space-around;
+    height:600px;
+    width:90%;
+  }
+  
+  .item {
+    width:250px;
+    height: fit-content;
+    margin-bottom:20px; 
+    background-color: white;
+  }
+  
+  .item:nth-child(3n+1) { order: 1; }
+  .item:nth-child(3n+2) { order: 2; }
+  .item:nth-child(3n)   { order: 3; }
+  
+  .container::before,
+  .container::after {
+    content: "";
+    flex-basis: 100%;
+    width: 0;
+    order: 2;
+  }

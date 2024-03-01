@@ -6,20 +6,20 @@
         <button type="submit" class="btn btn-primary" (click)="addTask()">Add Task</button>
      </div>
    
-    <div class="responses">
+    <div class="container" #container>
 
         <div *ngIf="noteItems.length==0">
             <h4>No Item To Show</h4>
               </div>
 
-        <div  *ngFor="let note of noteItems | filterPipe:curr_search;index as i" class="card">
+        <div  *ngFor="let note of noteItems | filterPipe:curr_search;index as i" class="item">
 
-            <div class="card-body">
-              <h5 class="card-title">{{note.title}}</h5>
-              <p class="card-text">{{note.content}}</p>
-              <a class="card-link" (click)="removeTask(i)"><i class="fa-solid fa-trash" style="color:darkblue"></i></a>
-              <a class="card-link" (click)="archiveTask(i)"><i class="fa-solid fa-box-archive" style="color:darkblue"></i></a>
-              </div>
-          </div>
-        </div>
+              <div class="card-body">
+                <h5 class="card-title">{{note.title}}</h5>
+                <p class="card-text">{{note.content}}</p>
+                <a class="card-link" (click)="removeTask(i)"><i class="fa-solid fa-trash" style="color:darkblue"></i></a>
+                <a class="card-link" (click)="archiveTask(i)"><i class="fa-solid fa-box-archive" style="color:darkblue"></i></a>
+                </div>
+            </div>
+          </div> 
 </div>

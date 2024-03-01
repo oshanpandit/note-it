@@ -24,8 +24,8 @@ export class HeaderComponent {
     this.sideNavToggled.emit(this.menuStatus);
   }
 
-    onSubmit(form:NgForm){
-      this.dataService.updateString(form.value.search);
+    onSubmit(event:any){
+      this.dataService.updateString(event.target.value);
   }
 
 

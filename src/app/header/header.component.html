@@ -6,10 +6,10 @@
 
      <a class="navbar-brand px-4" href="#"><h2>Keep</h2></a>
 
-     <form class="search d-flex me-5" (ngSubmit)="onSubmit(ref)" #ref="ngForm">
-         <input ngModel name="search" class="form-control me-2" type="search" placeholder="Search">
-         <button class="btn btn-outline-light" type="submit">Search</button>
-     </form>
+     <div class="search d-flex me-5">
+         <input (input)="onSubmit($event)" ngModel name="search" class="form-control me-2" type="search" placeholder="Search by Title or Note">
+         <!-- <button class="btn btn-outline-light" type="submit">Search</button> -->
+     </div>
 
      <div class="icons">
         <div class="logo" routerLink="/">

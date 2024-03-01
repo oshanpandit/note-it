@@ -21,6 +21,10 @@
     background-color: aqua;
     width:90%;
 }
+.card{
+    height:fit-content;
+
+}
 .card-body{
     border:2px solid black;
 }

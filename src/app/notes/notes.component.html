@@ -8,7 +8,7 @@
 
      <br><br>
    
-    <div [ngClass]="{'container':noteItems.length>0}">
+    <div [ngClass]="{'container':noteItems.length>0 && viewToggle==false}">
 
         <div *ngIf="noteItems.length==0" class="not-it">
             <i class="fa-solid fa-lightbulb"></i><br>

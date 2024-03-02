@@ -23,9 +23,14 @@ export class HeaderComponent {
     console.log("toggled");
     this.sideNavToggled.emit(this.menuStatus);
   }
+ 
 
     onSubmit(event:any){
       this.dataService.updateString(event.target.value);
+  }
+
+  viewToggled(){
+    this.dataService.onViewToggle();
   }
 
 

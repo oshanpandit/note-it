@@ -2,13 +2,11 @@
     
        <div class="heading">
         <h4>Trash will be deleted after 7 days</h4>
-       </div>
+       </div><br>
 
-          <div class="responses">
-
-                <h4 *ngIf="deletedItems.length==0">No Item To Show</h4>
+          <div class="container">
     
-            <div  *ngFor="let delete of deletedItems;index as i" class="card">
+            <div  *ngFor="let delete of deletedItems;index as i" class="item">
                 <div class="card-body">
                   <h5 class="card-title">{{delete.title}}</h5>
                   <p class="card-text">{{delete.content}}</p>

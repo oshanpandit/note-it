@@ -11,12 +11,13 @@ import { AfterViewInit,ElementRef,ViewChild } from '@angular/core';
 export class NotesComponent {
 
     constructor(private dataService:DataService){};
-    @ViewChild('container') container: ElementRef;
+    // @ViewChild('container') container: ElementRef;
     noteItems:{title:string,content:string}[];
     curr_title="";
     curr_content="";
     curr_search='';
-    display=600;
+    title_status=false;
+   //  display=600;
     
     ngOnInit(){
       this.noteItems=this.dataService.noteitems;
@@ -26,22 +27,33 @@ export class NotesComponent {
     }
 
     addTask(){
-        this.display+=this.curr_content.length/2.2;
-        this.container.nativeElement.style.height=this.display.toString()+'px';
+      //   this.display+=this.curr_content.length/2.2;
+      //   this.container.nativeElement.style.height=this.display.toString()+'px';
        if(this.curr_content!=''){
           this.dataService.addItem(this.curr_title,this.curr_content);
        }
+      this.title_status=false;
+       this.curr_content="";
+       this.curr_title="";
     }
     removeTask(index:number){
        
-        let diff=this.noteItems[index].content.length/2;
-        this.display=this.display-diff;
-        this.container.nativeElement.style.height=this.display.toString()+'px';
+      //   let diff=this.noteItems[index].content.length/2;
+      //   this.display=this.display-diff;
+      //   this.container.nativeElement.style.height=this.display.toString()+'px';
         this.dataService.removeItem(index);
     }
     
     archiveTask(index:number){
        this.dataService.archiveTask(index);
+    }
+
+    hasClicked(){
+      this.title_status=true;
+    }
+
+    getStatus(){
+      return this.title_status;
     }
 
 

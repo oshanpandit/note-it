@@ -19,6 +19,7 @@ export class NotesComponent {
     curr_search='';
     title_status=false;
     viewToggle=false;
+    viewProfile=false;
 
     ngOnInit(){
       this.noteItems=this.dataService.noteitems;
@@ -30,6 +31,11 @@ export class NotesComponent {
          this.viewToggle = newView;
          console.log("toggled status",this.viewToggle)
        });
+
+       this.dataService.toggleProfileSubject$.subscribe(newProfile => {
+        this.viewProfile = newProfile;
+        console.log("profile status",this.viewProfile)
+      });
     }
 
     addTask(){

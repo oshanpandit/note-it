@@ -8,12 +8,22 @@ export class DataService{
     deletedItems:{title:string,content:string}[]=[];
     archivedItems:{title:string,content:string}[]=[];
     viewToggle=false;
+    profileToggle=false;
+    darkToggle=false;
 
     private sharedStringSubject = new BehaviorSubject<string>('');
     sharedString$: Observable<string> = this.sharedStringSubject.asObservable();
 
     private toggleViewSubject = new BehaviorSubject<boolean>(this.viewToggle);
     toggleViewSubject$: Observable<boolean> = this. toggleViewSubject.asObservable();
+
+    
+    private toggleProfileSubject = new BehaviorSubject<boolean>(this.profileToggle);
+    toggleProfileSubject$: Observable<boolean> = this. toggleProfileSubject.asObservable();
+
+    
+    private toggleDarkSubject = new BehaviorSubject<boolean>(this.darkToggle);
+    toggleDarkSubject$: Observable<boolean> = this. toggleDarkSubject.asObservable();
   
     updateString(newString: string) {
       this.sharedStringSubject.next(newString);
@@ -21,6 +31,16 @@ export class DataService{
     onViewToggle(){
        this.viewToggle=!this.viewToggle;
        this.toggleViewSubject.next(this.viewToggle);
+    }
+    onProfileToggle(){
+        this.profileToggle=!this.profileToggle;
+        this.toggleProfileSubject.next(this.profileToggle);
+    }
+
+    onDarkToggle(){
+        this.darkToggle=!this.darkToggle;
+        this.toggleDarkSubject.next(this.darkToggle);
+        console.log("dark has been toggled and the value is ",this.darkToggle);
     }
 
     addItem(title:string,content:string){

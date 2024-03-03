@@ -1,0 +1,55 @@
+.backdrop{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    z-index:50;
+}
+.profile-area{
+    position:fixed;
+    top:12vh;
+    left:68vw;
+    width:30vw;
+    height:50vh;
+    margin-right:20px;
+    background-color:aqua;
+    z-index:100;
+    border-radius:20px;
+    background-color: rgb(175, 233, 237);
+
+}
+.main-area{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 80%;
+}
+.buttons{
+    display: flex;
+    width:80%;
+    justify-content: space-between;
+    height:50px;
+}
+.clickable{
+   height:100%;
+   width:45%;
+   border-radius: 20px;
+   border:none;
+   outline: none;
+}
+.icon{
+    height:70px;
+    width:70px;
+    border-radius:50px;
+    background-color: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon p{
+    font-size:50px;
+    margin-top: 15px;
+    color:white;
+}

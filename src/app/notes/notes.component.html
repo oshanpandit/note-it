@@ -7,6 +7,10 @@
      </div>
 
      <br><br>
+
+     <!-- <div *ngIf="viewProfile==true"><p>profile area</p></div> -->
+
+     <app-profile *ngIf="viewProfile==true"></app-profile>
    
     <div [ngClass]="{'container':noteItems.length>0 && viewToggle==false}">
 

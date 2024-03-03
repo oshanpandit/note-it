@@ -34,4 +34,12 @@ export class HeaderComponent {
     this.dataService.onViewToggle();
   }
 
+  profileToggled(){
+    this.dataService.onProfileToggle();
+  }
+
+  darkToggled(){
+    this.dataService.onDarkToggle();
+  }
+
 }

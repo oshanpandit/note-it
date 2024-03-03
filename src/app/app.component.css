@@ -15,14 +15,17 @@ main{
     z-index:1;
 }
 app-side-nav{
-    position:absolute;
+    position:fixed;
     left:0rem;
     width:60px;
-    height:calc(100vh - 4rem);
+    height:100vh;
     border-top:1px solid white;
     overflow-x: hidden;
     white-space: nowrap;
     transition: width 250ms ease-in;
+}
+.side-dark{
+    background-color: black;
 }
 .app-side-nav-open{
     width: 250px;

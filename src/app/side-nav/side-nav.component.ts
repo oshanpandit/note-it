@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Input } from '@angular/core';
-
+import { OnInit } from '@angular/core'
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-side-nav',
@@ -9,9 +10,14 @@ import { Input } from '@angular/core';
 })
 export class SideNavComponent {
 
-  constructor(){}
+  constructor(private dataService:DataService){}
+  isDark=false;
 
-  onInit(){
+  ngOnInit(){
+      this.dataService.toggleDarkSubject$.subscribe(newStatus => {
+      this.isDark = newStatus;
+      console.log("profile status",this.isDark)
+    });
   }
 
   @Input() sideNavStatus:boolean=false;

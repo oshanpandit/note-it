@@ -2,24 +2,24 @@
     <ul class="nav-list">
 
         <li routerLink="/" class="nav-list-item">
-            <i class="fa-solid fa-lightbulb"></i>
+            <i class="fa-solid fa-lightbulb" [ngClass]="{'font-dark':isDark==true}"></i>
                 <span>
-                    <a href="/">Notes</a>
+                    <a href="/" [ngClass]="{'font-dark':isDark==true}">Notes</a>
                 </span>
            </li>
         
         <li routerLink="archive" class="nav-list-item">
-            <i class="fa-solid fa-folder"></i>
+            <i class="fa-solid fa-folder" [ngClass]="{'font-dark':isDark==true}"></i>
         <span>
-            <a href="/archive">Archive</a>
+            <a href="/archive" [ngClass]="{'font-dark':isDark==true}">Archive</a>
         </span>
         
     </li>
 
    <li routerLink="trash" class="nav-list-item">
-    <i class="fa-solid fa-trash"></i>
+    <i class="fa-solid fa-trash" [ngClass]="{'font-dark':isDark==true}"></i>
         <span>
-            <a href="/trash">Trash</a>
+            <a href="/trash" [ngClass]="{'font-dark':isDark==true}">Trash</a>
         </span>
    </li>
 

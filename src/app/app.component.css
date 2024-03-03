@@ -22,7 +22,6 @@ app-side-nav{
     border-top:1px solid white;
     overflow-x: hidden;
     white-space: nowrap;
-    transition: width 250ms ease-in;
 }
 .side-dark{
     background-color: black;

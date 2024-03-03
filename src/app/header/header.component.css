@@ -4,11 +4,13 @@ nav{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 .header-dark{
-    background-color:black;
+    background-color:#202124;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
 }
 .font-dark{
     color:white;
 }
+
 .side-nav-button{
     display:flex;
     justify-content: center;
@@ -27,6 +29,14 @@ nav{
 
 .search{
     width:60%;
+    border-radius:10px;
+}
+.search input{
+    border-radius:10px;
+    background-color: #c4bfbe;
+}
+.search input:hover{
+    background-color: white;
 }
 .icons{
     width:20%;

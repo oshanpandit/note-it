@@ -20,6 +20,7 @@ export class NotesComponent {
     title_status=false;
     viewToggle=false;
     viewProfile=false;
+    isDark=false;
 
     ngOnInit(){
       this.noteItems=this.dataService.noteitems;
@@ -35,6 +36,11 @@ export class NotesComponent {
        this.dataService.toggleProfileSubject$.subscribe(newProfile => {
         this.viewProfile = newProfile;
         console.log("profile status",this.viewProfile)
+      });
+
+      this.dataService.toggleDarkSubject$.subscribe(newStatus => {
+        this.isDark = newStatus;
+        console.log(this.isDark)
       });
     }
 

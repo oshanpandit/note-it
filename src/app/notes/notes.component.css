@@ -3,8 +3,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
-    width:100%;
+    height: calc(100vh-4rem); /* Ensure container takes up at least the height of the viewport */
+    width:94vw;
+
+}
+.notes-dark{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+  background-color:#202124;
+}
+.font-dark{
+  color:white;
+}
+.container-dark{
+  color: white;
 }
 .form-input{
     width:50%;
@@ -12,38 +25,42 @@
     flex-direction: column;
     align-items: center;
     margin-bottom:20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+.form-input input{
+  border-radius: 10px;
+  background-color:transparent;
+ 
 }
 .title-class{
   width:100%;
   height:50px;
-  border:2px solid #ccc;
-  border-bottom: 1px solid transparent;
+  border:2px solid #ccc; 
+  border-bottom: 1px solid transparent; 
   outline: none;
 }
 .content-class{
-  height:50px;
+   height:50px;
    width:100%;
    border:2px solid #ccc;
    border-top:1px solid transparent;
-   outline: none;
+   outline: none; 
 }
 
   .container{
-    position:relative;
-    left: 30px;
-    width:96%;
+    width:80%;
     columns:4;
     column-gap: 10px;
  }
  .item{
-   background-color: white;
+   background:transparent;
    width:227px;
    height:fit-content;
    break-inside: avoid;
    margin-bottom: 18px;
-   border:2px solid #ccc;
-   border-radius:10px;
+   border:3px solid #ccc;
+   border-radius:6px;
 }
 .item:hover{
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
@@ -66,4 +83,7 @@
 
 .item:hover .hidden-element {
   visibility: visible;
+}
+a{
+  text-decoration: none;
 }

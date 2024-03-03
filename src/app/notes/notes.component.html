@@ -1,4 +1,4 @@
-<div class="notes-area">
+<div class="notes-area" [ngClass]="{'notes-dark':isDark==true}">
 
      <div class="form-input">
         <input *ngIf="getStatus()" [(ngModel)]="curr_title" class="title-class" placeholder="Add a Title">
@@ -15,17 +15,17 @@
     <div [ngClass]="{'container':noteItems.length>0 && viewToggle==false}">
 
         <div *ngIf="noteItems.length==0" class="not-it">
-            <i class="fa-solid fa-lightbulb"></i><br>
-            <h2>No Item To Show</h2>
+            <i class="fa-solid fa-lightbulb" [ngClass]="{'font-dark':isDark==true}"></i><br>
+            <h2 [ngClass]="{'font-dark':isDark==true}">No Item To Show</h2>
               </div>
 
         <div  *ngFor="let note of noteItems | filterPipe:curr_search;index as i" class="item">
 
-              <div class="card-body">
+              <div class="card-body" [ngClass]="{'container-dark':isDark==true}">
                 <h5 class="card-title"><p>{{note.title}}</p></h5>
                 <p class="card-text">{{note.content}}</p>
-                <a class="card-link hidden-element" (click)="removeTask(i)"><i class="fa-solid fa-trash" style="color:darkblue"></i></a>
-                <a class="card-link hidden-element" (click)="archiveTask(i)"><i class="fa-solid fa-box-archive" style="color:darkblue"></i></a>
+                <a class="card-link hidden-element" (click)="removeTask(i)"><i [ngClass]="{'font-dark':isDark==true}" class="fa-solid fa-trash"></i></a>
+                <a class="card-link hidden-element" (click)="archiveTask(i)"><i [ngClass]="{'font-dark':isDark==true}" class="fa-solid fa-box-archive"></i></a>
                 </div>
             </div>
           </div> 

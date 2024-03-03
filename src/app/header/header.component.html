@@ -1,10 +1,10 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark px-2">
+<nav class="header navbar navbar-expand" [ngClass]="{'header-dark':isDark==true}">
 
      <div class="side-nav-button p-2 me-3 text-light" (click)="SideNavToggle()">
          <i class="fa-solid fa-bars"></i>
      </div>
 
-     <a class="navbar-brand px-4" href="#"><h2>Keep</h2></a>
+     <div class="navbar-brand px-4"><h2 [ngClass]="{'font-dark':isDark==true}">Keep</h2></div>
 
      <div class="search d-flex me-5">
          <input (input)="onSubmit($event)" ngModel name="search" class="form-control me-2" type="search" placeholder="Search by Title or Note">
@@ -13,13 +13,13 @@
 
      <div class="icons">
         <div class="logo" routerLink="/">
-            <i class="fa-solid fa-rotate-right"></i>
+            <i [ngClass]="{'font-dark':isDark==true}" class="fa-solid fa-rotate-right"></i>
          </div>
          <div class="logo" (click)="viewToggled()">
-            <i class="fa-solid fa-table-list"></i>
+            <i [ngClass]="{'font-dark':isDark==true}" class="fa-solid fa-table-list"></i>
          </div>
          <div class="logo" (click)="darkToggled()">
-            <i class="fa-solid fa-gear"></i>
+            <i [ngClass]="{'font-dark':isDark==true}" class="fa-solid fa-gear"></i>
          </div>
          <div class="profile-logo" (click)="profileToggled()">
             <i class="fa-solid fa-user"></i>

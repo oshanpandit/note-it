@@ -1,12 +1,22 @@
 nav{
     height:100%;
 }
+.header-dark{
+    background-color: #2d2e2e;
+}
+.font-dark{
+    color:white;
+}
 .side-nav-button{
     display:flex;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
     cursor: pointer;
+    margin-left:12px;
+}
+.side-nav-button i{
+    color:#787a7a;
 }
 .side-nav-button:hover{
   background-color: gainsboro;
@@ -24,7 +34,7 @@ nav{
 }
 
 .logo{
-    color:white;
+    color: #787a7a;
     font-size:22px;
 }
 

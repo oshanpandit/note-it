@@ -19,6 +19,7 @@ export class HeaderComponent {
   }
   @Output() sideNavToggled=new EventEmitter<boolean>();
   menuStatus:boolean=false;
+  isDark=false;
   SideNavToggle(){
     this.menuStatus=!this.menuStatus;
     console.log("toggled");
@@ -39,6 +40,7 @@ export class HeaderComponent {
   }
 
   darkToggled(){
+    this.isDark=!this.isDark;
     this.dataService.onDarkToggle();
   }
 

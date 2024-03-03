@@ -12,6 +12,9 @@ import { ArchiveComponent } from './archive/archive.component';
 import { TrashComponent } from './trash/trash.component';
 import { FilterPipePipe } from './filter-pipe.pipe';
 import { TestComponent } from './test/test.component';
+import { ProfileComponent } from './profile/profile.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 
 
 const appRoutes:Routes=[
@@ -30,12 +33,14 @@ const appRoutes:Routes=[
     ArchiveComponent,
     TrashComponent,
     FilterPipePipe,
-    TestComponent
+    TestComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
+    DragDropModule
   ],
   exports:[RouterModule],
   providers: [],

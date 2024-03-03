@@ -12,6 +12,7 @@ import { NgForm } from '@angular/forms';
 export class HeaderComponent {
 
   constructor(private dataService:DataService){};
+  
 
   ngOnInit(){
    
@@ -32,6 +33,5 @@ export class HeaderComponent {
   viewToggled(){
     this.dataService.onViewToggle();
   }
-
 
 }

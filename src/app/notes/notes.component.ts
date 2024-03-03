@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { DataService } from '../data.service';
 import { OnInit } from '@angular/core';
 import { AfterViewInit,ElementRef,ViewChild } from '@angular/core';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+
 
 @Component({
   selector: 'app-notes',
@@ -35,7 +37,7 @@ export class NotesComponent {
        if(this.curr_content!=''){
           this.dataService.addItem(this.curr_title,this.curr_content);
        }
-      this.title_status=false;
+      // this.title_status=false;
        this.curr_content="";
        this.curr_title="";
     }
@@ -49,12 +51,15 @@ export class NotesComponent {
     }
 
     hasClicked(){
-      this.title_status=true;
+      if(this.curr_title!=''){
+        this.title_status=true;
+        return;
+      }
+      this.title_status=!this.title_status;
     }
 
     getStatus(){
       return this.title_status;
     }
-
 
 }

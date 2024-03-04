@@ -87,3 +87,6 @@
 a{
   text-decoration: none;
 }
+.card-text{
+  font-size: 14px;
+}

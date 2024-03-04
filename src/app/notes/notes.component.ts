@@ -74,4 +74,10 @@ export class NotesComponent {
       return this.title_status;
     }
 
+    getDots(note:string){
+      if(note.length>297){
+        return "..."
+      }
+    }
+
 }

@@ -23,7 +23,7 @@
 
               <div class="card-body" [ngClass]="{'container-dark':isDark==true}">
                 <h5 class="card-title"><p>{{note.title}}</p></h5>
-                <p class="card-text">{{note.content}}</p>
+                <p class="card-text">{{note.content.substr(0,297)}}{{getDots(note.content)}}</p>
                 <a class="card-link hidden-element" (click)="removeTask(i)"><i [ngClass]="{'font-dark':isDark==true}" class="fa-solid fa-trash"></i></a>
                 <a class="card-link hidden-element" (click)="archiveTask(i)"><i [ngClass]="{'font-dark':isDark==true}" class="fa-solid fa-box-archive"></i></a>
                 </div>

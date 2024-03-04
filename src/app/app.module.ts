@@ -14,6 +14,7 @@ import { FilterPipePipe } from './filter-pipe.pipe';
 import { TestComponent } from './test/test.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ContentOverlayComponent } from './content-overlay/content-overlay.component';
 
 
 
@@ -34,7 +35,8 @@ const appRoutes:Routes=[
     TrashComponent,
     FilterPipePipe,
     TestComponent,
-    ProfileComponent
+    ProfileComponent,
+    ContentOverlayComponent
   ],
   imports: [
     BrowserModule,

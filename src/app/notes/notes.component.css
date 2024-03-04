@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: calc(100vh-4rem); /* Ensure container takes up at least the height of the viewport */
+    height: calc(100vh-4rem);
     width:94vw;
 
 }
@@ -49,13 +49,14 @@
 }
 
   .container{
-    width:80%;
+    width:75%;
     columns:4;
     column-gap: 10px;
+    margin-left:100px;
  }
  .item{
    background:transparent;
-   width:227px;
+   width:210px;
    height:fit-content;
    break-inside: avoid;
    margin-bottom: 18px;

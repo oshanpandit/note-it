@@ -8,6 +8,8 @@
 
      <br><br>
 
+     <app-content-overlay *ngIf="overlay_view==true"></app-content-overlay>
+
      <!-- <div *ngIf="viewProfile==true"><p>profile area</p></div> -->
 
      <app-profile *ngIf="viewProfile==true"></app-profile>
@@ -19,7 +21,7 @@
             <h2 [ngClass]="{'font-dark':isDark==true}">No Item To Show</h2>
               </div>
 
-        <div  *ngFor="let note of noteItems | filterPipe:curr_search;index as i" class="item">
+        <div  *ngFor="let note of noteItems | filterPipe:curr_search;index as i" class="item" (click)="overlayClick(i)">
 
               <div class="card-body" [ngClass]="{'container-dark':isDark==true}">
                 <h5 class="card-title"><p>{{note.title}}</p></h5>

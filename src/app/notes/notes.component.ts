@@ -21,6 +21,7 @@ export class NotesComponent {
     viewToggle=false;
     viewProfile=false;
     isDark=false;
+    overlay_view=false;
 
     ngOnInit(){
       this.noteItems=this.dataService.noteitems;
@@ -41,6 +42,11 @@ export class NotesComponent {
       this.dataService.toggleDarkSubject$.subscribe(newStatus => {
         this.isDark = newStatus;
         console.log(this.isDark)
+      });
+      
+      this.dataService.toggleOverlaySubject$.subscribe(newOverlay => {
+        this.overlay_view = newOverlay;
+        console.log("the overlay view is "+this.overlay_view)
       });
     }
 
@@ -78,6 +84,17 @@ export class NotesComponent {
       if(note.length>297){
         return "..."
       }
+    }
+
+    overlayClick(index:number){
+      
+      if(this.noteItems[index].title.length>0){
+        this.dataService.overlay_title=this.noteItems[index].title;
+      }else{
+        this.dataService.overlay_title="Title..";
+      }
+      this.dataService.overlay_content=this.noteItems[index].content;
+      this.dataService.onOverlayToggle();
     }
 
 }

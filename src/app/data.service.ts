@@ -10,6 +10,10 @@ export class DataService{
     viewToggle=false;
     profileToggle=false;
     darkToggle=false;
+    overlay_title="";
+    overlay_content="";
+    overlay_view=false;
+
 
     private sharedStringSubject = new BehaviorSubject<string>('');
     sharedString$: Observable<string> = this.sharedStringSubject.asObservable();
@@ -24,6 +28,9 @@ export class DataService{
     
     private toggleDarkSubject = new BehaviorSubject<boolean>(this.darkToggle);
     toggleDarkSubject$: Observable<boolean> = this. toggleDarkSubject.asObservable();
+
+    private toggleOverlaySubject = new BehaviorSubject<boolean>(this.overlay_view);
+    toggleOverlaySubject$: Observable<boolean> = this. toggleOverlaySubject.asObservable();
   
     updateString(newString: string) {
       this.sharedStringSubject.next(newString);
@@ -41,6 +48,10 @@ export class DataService{
         this.darkToggle=!this.darkToggle;
         this.toggleDarkSubject.next(this.darkToggle);
         console.log("dark has been toggled and the value is ",this.darkToggle);
+    }
+    onOverlayToggle(){
+        this.overlay_view=!this.overlay_view;
+        this.toggleOverlaySubject.next(this.overlay_view);
     }
 
     addItem(title:string,content:string){

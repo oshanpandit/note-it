@@ -15,6 +15,7 @@ import { TestComponent } from './test/test.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ContentOverlayComponent } from './content-overlay/content-overlay.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
@@ -22,7 +23,8 @@ const appRoutes:Routes=[
   {path:'',component:NotesComponent},
   {path:'archive',component:ArchiveComponent},
   {path:'trash',component:TrashComponent},
-  {path:'test',component:TestComponent}
+  {path:'test',component:TestComponent},
+  {path:'**',component:NotFoundComponent}
 ];
 
 @NgModule({
@@ -36,7 +38,8 @@ const appRoutes:Routes=[
     FilterPipePipe,
     TestComponent,
     ProfileComponent,
-    ContentOverlayComponent
+    ContentOverlayComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

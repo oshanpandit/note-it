@@ -91,8 +91,6 @@ export class NotesComponent {
       
       const isFormInput = target.closest('.form-input');
 
-      console.log(target);
-  
       if (isFormInput) {
         this.title_status = true;
       } else {

@@ -1,16 +1,14 @@
-<div class="notes-area" [ngClass]="{'notes-dark':isDark==true}">
+<div class="notes-area" [ngClass]="{'notes-dark':isDark==true}" (click)="handleClick($event)">
 
      <div class="form-input">
-        <input *ngIf="getStatus()" [(ngModel)]="curr_title" class="title-class" placeholder="Add a Title">
-        <input (click)="hasClicked()" [(ngModel)]="curr_content" class="content-class" placeholder="Take a Note.." (keydown.enter)="addTask()">
-        <!-- <button type="submit" class="btn btn-primary" (click)="addTask()">Add Task</button> -->
+        <input *ngIf="title_status==true" [(ngModel)]="curr_title" class="title-class" placeholder="Add a Title">
+        <input [(ngModel)]="curr_content" class="content-class" placeholder="Take a Note.." (keydown.enter)="addTask()">
      </div>
 
      <br><br>
 
      <app-content-overlay *ngIf="overlay_view==true"></app-content-overlay>
 
-     <!-- <div *ngIf="viewProfile==true"><p>profile area</p></div> -->
 
      <app-profile *ngIf="viewProfile==true"></app-profile>
    

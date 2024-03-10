@@ -13,16 +13,16 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 })
 export class NotesComponent {
 
-    constructor(private dataService:DataService){};
+    constructor(private dataService:DataService,private elementRef: ElementRef){};
     noteItems:{title:string,content:string}[];
     curr_title="";
     curr_content="";
     curr_search='';
-    title_status=false;
     viewToggle=false;
     viewProfile=false;
     isDark=false;
     overlay_view=false;
+    title_status=false;
 
     ngOnInit(){
       this.noteItems=this.dataService.noteitems;
@@ -56,7 +56,6 @@ export class NotesComponent {
        if(this.curr_content!=''){
           this.dataService.addItem(this.curr_title,this.curr_content);
        }
-      // this.title_status=false;
        this.curr_content="";
        this.curr_title="";
     }
@@ -67,18 +66,6 @@ export class NotesComponent {
     
     archiveTask(index:number){
        this.dataService.archiveTask(index);
-    }
-
-    hasClicked(){
-      if(this.curr_title!=''){
-        this.title_status=true;
-        return;
-      }
-      this.title_status=!this.title_status;
-    }
-
-    getStatus(){
-      return this.title_status;
     }
 
     getDots(note:string){
@@ -98,6 +85,21 @@ export class NotesComponent {
       this.dataService.onOverlayToggle();
     }
 
+    
+    handleClick(event: MouseEvent) {
+      const target = event.target as HTMLElement;
+      
+      const isFormInput = target.closest('.form-input');
+
+      console.log(target);
+  
+      if (isFormInput) {
+        this.title_status = true;
+      } else {
+        this.title_status = false;
+      }
+    }
+
     @HostListener('window:resize', ['$event'])
     onResize(event: any) {
       this.checkScreenSize();
@@ -110,5 +112,6 @@ export class NotesComponent {
          this.viewToggle=false;
       }
     }
+
 
 }

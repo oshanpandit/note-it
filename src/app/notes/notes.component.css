@@ -63,6 +63,7 @@
 }
 .card-text{
   word-wrap:break-word;
+  font-size: 14px;
 }
 .not-it{
   display: flex;
@@ -83,9 +84,7 @@
 a{
   text-decoration: none;
 }
-.card-text{
-  font-size: 15px;
-}
+
 
 @media screen and (max-width:1000px) {
   .card-text {

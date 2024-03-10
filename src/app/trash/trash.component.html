@@ -6,7 +6,7 @@
 
           <div class="container">
     
-            <div  *ngFor="let delete of deletedItems;index as i" class="item">
+            <div  *ngFor="let delete of deletedItems  | filterPipe:curr_search;index as i" class="item">
                 <div class="card-body">
                   <h5 class="card-title">{{delete.title}}</h5>
                   <p class="card-text">{{delete.content}}</p>

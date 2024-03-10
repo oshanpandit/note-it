@@ -15,22 +15,35 @@
 }
 
 .container{
-    width:85%;
-    columns:4;
-    column-gap: 10px;
+  width:85%;
+  columns:4;
+  column-gap:2%;
  }
  .item{
-   background-color: white;
-   width:200px;
-   border:1px solid grey;
+  background:transparent;
+   max-width:230px;
+   min-width:30%;
    height:fit-content;
    break-inside: avoid;
-   margin-bottom: 20px;
+   margin-bottom: 18px;
    border:3px solid #ccc;
+   border-radius:6px;
 }
 .item:hover{
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 .card-text{
   word-wrap:break-word;
+  font-size: 15px;
 }
+@media screen and (max-width:1000px) {
+  .card-text {
+    font-size:12px;
+  }
+}
+@media screen and (max-width:900px) {
+  .card-text {
+    font-size:15px;
+  }
+}
+

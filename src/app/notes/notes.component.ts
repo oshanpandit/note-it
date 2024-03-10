@@ -3,6 +3,7 @@ import { DataService } from '../data.service';
 import { OnInit } from '@angular/core';
 import { AfterViewInit,ElementRef,ViewChild } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { User } from '../interface/user.interface';
 
 
 
@@ -14,7 +15,7 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 export class NotesComponent {
 
     constructor(private dataService:DataService,private elementRef: ElementRef){};
-    noteItems:{title:string,content:string}[];
+    noteItems:User[];
     curr_title="";
     curr_content="";
     curr_search='';

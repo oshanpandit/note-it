@@ -11,7 +11,6 @@ import { NotesComponent } from './notes/notes.component';
 import { ArchiveComponent } from './archive/archive.component';
 import { TrashComponent } from './trash/trash.component';
 import { FilterPipePipe } from './filter-pipe.pipe';
-import { TestComponent } from './test/test.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ContentOverlayComponent } from './content-overlay/content-overlay.component';
@@ -23,7 +22,6 @@ const appRoutes:Routes=[
   {path:'',component:NotesComponent},
   {path:'archive',component:ArchiveComponent},
   {path:'trash',component:TrashComponent},
-  {path:'test',component:TestComponent},
   {path:'**',component:NotFoundComponent}
 ];
 
@@ -36,7 +34,6 @@ const appRoutes:Routes=[
     ArchiveComponent,
     TrashComponent,
     FilterPipePipe,
-    TestComponent,
     ProfileComponent,
     ContentOverlayComponent,
     NotFoundComponent

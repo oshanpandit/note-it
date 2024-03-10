@@ -6,7 +6,7 @@
 
        <div class="container">
  
-         <div  *ngFor="let archive of archivedItems;index as i" class="item">
+         <div  *ngFor="let archive of archivedItems  | filterPipe:curr_search;index as i" class="item">
              <div class="card-body">
                <h5 class="card-title">{{archive.title}}</h5>
                <p class="card-text">{{archive.content}}</p>

@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Input } from '@angular/core';
 import { OnInit } from '@angular/core'
 import { DataService } from '../data.service';
+
 
 @Component({
   selector: 'app-side-nav',
@@ -21,6 +22,5 @@ export class SideNavComponent {
   }
 
   @Input() sideNavStatus:boolean=false;
-  
 
 }

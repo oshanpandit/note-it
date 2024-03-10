@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { DataService } from '../data.service';
 import { OnInit } from '@angular/core';
 import { AfterViewInit,ElementRef,ViewChild } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+
 
 
 @Component({
@@ -95,6 +96,19 @@ export class NotesComponent {
       }
       this.dataService.overlay_content=this.noteItems[index].content;
       this.dataService.onOverlayToggle();
+    }
+
+    @HostListener('window:resize', ['$event'])
+    onResize(event: any) {
+      this.checkScreenSize();
+    }
+  
+    private checkScreenSize() {
+      if(window.innerWidth < 900){
+        this.viewToggle=true;
+      } else{
+         this.viewToggle=false;
+      }
     }
 
 }

@@ -3,6 +3,7 @@ import { EventEmitter } from '@angular/core';
 import { DataService } from '../data.service';
 import { OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -42,6 +43,18 @@ export class HeaderComponent {
   darkToggled(){
     this.isDark=!this.isDark;
     this.dataService.onDarkToggle();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.checkScreenSize();
+  }
+
+  private checkScreenSize() {
+    if(window.innerWidth<=700 && this.menuStatus==true){
+      this.menuStatus=false;
+    }
+    this.sideNavToggled.emit(this.menuStatus);
   }
 
 }

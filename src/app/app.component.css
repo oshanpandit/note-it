@@ -13,31 +13,33 @@ main{
     width:100%;
     top:4rem;
     z-index:1;
+    height:calc(100% - 4rem);
+    overflow-y: auto;
 }
 app-side-nav{
     position:fixed;
     left:0rem;
-    width:60px;
+    width:70px;
     height:100vh;
-    border-top:1px solid white;
     overflow-x: hidden;
     white-space: nowrap;
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.4);
 }
 .side-dark{
     background-color: black;
 }
 .app-side-nav-open{
-    width: 250px;
+    width:16%;
 }
 .display-area{
     position:absolute;
-    left:60px;
+    left:70px;
     /* was 60 */
-    width:calc(100% - 250px);
+    width:calc(100% - 70px);
     transition: width 250ms ease-in-out,width 250ms ease-in;
 }
 .display-area-shrink{
-    width:calc(100% - 250px);
-    left:250px;
+    width:calc(100% - 16%);
+    left:16%;
    
 }

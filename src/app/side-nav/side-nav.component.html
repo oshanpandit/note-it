@@ -1,24 +1,25 @@
 <div class="side-nav-content">
+    
     <ul class="nav-list">
 
-        <li routerLink="/" class="nav-list-item">
+        <li routerLink="/" class="nav-list-item" [ngClass]="{'closed-nav':!sideNavStatus}">
             <i class="fa-solid fa-lightbulb" [ngClass]="{'font-dark':isDark==true}"></i>
-                <span>
+                <span *ngIf="sideNavStatus==true">
                     <a href="/" [ngClass]="{'font-dark':isDark==true}">Notes</a>
                 </span>
            </li>
         
-        <li routerLink="archive" class="nav-list-item">
+        <li routerLink="archive" class="nav-list-item" [ngClass]="{'closed-nav':!sideNavStatus}">
             <i class="fa-solid fa-folder" [ngClass]="{'font-dark':isDark==true}"></i>
-        <span>
+        <span  *ngIf="sideNavStatus==true">
             <a href="/archive" [ngClass]="{'font-dark':isDark==true}">Archive</a>
         </span>
         
     </li>
 
-   <li routerLink="trash" class="nav-list-item">
+   <li routerLink="trash" class="nav-list-item" [ngClass]="{'closed-nav':!sideNavStatus}">
     <i class="fa-solid fa-trash" [ngClass]="{'font-dark':isDark==true}"></i>
-        <span>
+        <span  *ngIf="sideNavStatus==true">
             <a href="/trash" [ngClass]="{'font-dark':isDark==true}">Trash</a>
         </span>
    </li>
